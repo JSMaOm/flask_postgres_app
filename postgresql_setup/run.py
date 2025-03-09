@@ -1,4 +1,4 @@
-from app import create_app
+from postgresql_setup.app import create_app
 
 flask_app = create_app()
 

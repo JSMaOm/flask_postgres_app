@@ -3,7 +3,7 @@ from flask import render_template, request, redirect, url_for
 from flask_login import login_user, logout_user, current_user, login_required
 
 # here we import the models we want to use
-from models import Person, User
+from postgresql_setup.models import Person, User
 
 # to avoid the circular imports we use a function here
 def register_routes(app, db, bcrypt):

@@ -128,7 +128,16 @@ is not done here, this package for managing the log_in process nothing else
 1. login the user
 2. keep the user logged in
 3. logout the user
+ 
 
+## Blueprints in Flask Applications
+Blueprints in Flask Apps is the idea of turning the app into different modules/components
+where its module/component is a separate entity.
+
+we start first by creating a folder within the root folder of the app, and we package it with the file 
+`__init__.py` and other app-related files like `app.py`
+
+the `run.py` is in the root folder of the app.
 
 ## Errors and Solutions
 
