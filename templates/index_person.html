@@ -13,7 +13,7 @@
     {% endfor %}
 </ul>
 <h3>Add New Person</h3>
-<form action="{{ url_for('index') }}" method="POST">
+<form action="{{ url_for('index_person') }}" method="POST">
     <input type="text" name="name" placeholder="Name" required/><br>
     <input type="number" name="age" placeholder="Age" required/><br>
     <input type="text" name="job" placeholder="Job"/><br>

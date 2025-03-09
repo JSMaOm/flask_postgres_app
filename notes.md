@@ -81,4 +81,72 @@ python -m flask db upgrade
 ```
 
 ## Design Pattern
-the design pattern used in this app is the `Factory Pattern` 
+the design pattern used in this app is the `Factory Pattern`
+
+## Flask Authentication
+
+1. we will have a `User` class
+2. build the authentication for the `User` class
+3. the operation here we are going to do is
+   1. login a user 
+   2. register or sign up a user
+   3. keep a user logged in
+   4. differentiate between users, and checking which user is sending the requests
+
+**For this we have to install the following:**
+
+1. we need to install external packages 
+   1. `flask-login`
+   2. `flask-bcrypt` this package is going to be used in order to hash
+   the user's password when adding a user to the database,
+   so we keep all the secrets hashed and secured in the database
+   and when dealing with it within the code-base
+```
+pip3 install flask-login flask-bcrypt
+```
+
+2. now we have to import the packages inside the `app.py` file 
+```
+from flask_login import LoginManager
+from flask_bcrypt import Bcrypt
+```
+
+3. inside the `models.py` we need to import the following
+```
+from flask_login import UserMixin
+```
+4. in the `app.py` we have to define the secret of the user session
+
+
+##### Flask Login Does not implement the logic of the loggin procedure
+this means that the way we want to log_in the user to the app like
+1. with password
+2. with email
+3. with another security measure
+
+is not done here, this package for managing the log_in process nothing else
+1. login the user
+2. keep the user logged in
+3. logout the user
+
+
+## Errors and Solutions
+
+1. while trying migrating the columns data the fllowing error I received
+```
+ERROR [flask_migrate] Error: Target database is not up to date.
+```
+to solve this issue, [stackoverflow](https://stackoverflow.com/questions/17768940/target-database-is-not-up-to-date)
+```
+python -m flask db stamp head
+python -m flask db migrate
+python -m flask db upgrade
+```
+
+
+## References
+
+[PostgreSQL-SQLAlchemy](https://docs.sqlalchemy.org/en/20/dialects/postgresql.html)
+
+[SQL Datatype Objects in SQLAlchemy](https://docs.sqlalchemy.org/en/20/core/types.html)
+
