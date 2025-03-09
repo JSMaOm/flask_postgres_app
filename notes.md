@@ -134,10 +134,17 @@ is not done here, this package for managing the log_in process nothing else
 Blueprints in Flask Apps is the idea of turning the app into different modules/components
 where its module/component is a separate entity.
 
-we start first by creating a folder within the root folder of the app, and we package it with the file 
-`__init__.py` and other app-related files like `app.py`
-
-the `run.py` is in the root folder of the app.
+1. we start first by creating a folder within the root folder of the app, and we package it with the file 
+`__init__.py` and it contains also the `app.py` file where the merging of the blueprints is established. This folder contains all the app blueprints.
+2. each blueprint folder is going to contain the following file
+   1. `__init__.py`
+   2. `models.py`
+   3. `routes.py`
+3. we will have a default blueprint `core` where the default settings/pages of the app live, it contains the following files:
+   1. `__init__.py`
+   2. `routes.py`
+4. within each blueprint/routes.py file we have to import `Blueprint` from 'flask'
+5. the `run.py` is in the root folder of the app.
 
 ## Errors and Solutions
 

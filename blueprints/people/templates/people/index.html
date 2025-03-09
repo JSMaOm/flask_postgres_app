@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}People Index{% endblock %}
+{% block content %}
+<ul>
+    {% for person in people %}
+        <li>{{ person }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
