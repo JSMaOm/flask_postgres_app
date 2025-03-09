@@ -146,6 +146,8 @@ python -m flask db upgrade
 
 ## References
 
+[SQLAlchemy Configuration Reference](https://flask-sqlalchemy.readthedocs.io/en/stable/config/)
+
 [PostgreSQL-SQLAlchemy](https://docs.sqlalchemy.org/en/20/dialects/postgresql.html)
 
 [SQL Datatype Objects in SQLAlchemy](https://docs.sqlalchemy.org/en/20/core/types.html)
