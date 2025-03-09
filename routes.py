@@ -73,7 +73,7 @@ def register_routes(app, db, bcrypt):
             db.session.add(user)
             db.session.commit()
             # and now we redirect the user to the index page or whatever page we want
-            return redirect(url_for('index'))
+            return redirect(url_for('login'))
 
     @app.route('/login', methods=['GET', 'POST'])
     def login():
@@ -97,3 +97,11 @@ def register_routes(app, db, bcrypt):
     def logout():
         logout_user()
         return redirect(url_for('index'))
+
+    # in case we have some endpoints we want only the authenticated users
+    # to be able to log_in to
+    # for this we need to require log_in
+    @app.route('/secret')
+    @login_required
+    def secret():
+        return 'Only for Authorized Users!'
