@@ -6,7 +6,7 @@
 <form action="{{ url_for('todos.create') }}" method="POST">
     <input type="text" name="title" placeholder="Todo Title" required>
     <input type="text" name="description" placeholder="Todo Description">
-    <input type="checkbox" name="done" required> Done
+    <input type="checkbox" name="done"> Done
     <input type="submit" value="Create">
 </form>
 <a href="{{ url_for('core.index') }}">Home Page</a>
